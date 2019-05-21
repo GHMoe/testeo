@@ -1,10 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Welcome Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!--<ion-content padding>
   <h2>Welcome to Ionic!</h2>
   <p>
     This starter project comes with simple tabs-based layout for apps
@@ -14,4 +14,26 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+
+  <button ion-button block (click)="launchPaginaUnoPage()">Página Uno</button>-->
+
+  <!-- Start Ionic slides Component -->
+<ion-content>
+  <ion-slides pager>
+    <ion-slide style="background-color: green">
+      <h2>Welcome to Hello World!</h2>
+      <p>Do some reading here and swipe left</p>
+    </ion-slide>
+    <ion-slide style="background-color: blue">
+      <h2>Ionic World</h2>
+      <p>Some more reading here and swipe left</p>
+      <p>Swiping right works too :)</p>
+    </ion-slide>
+    <ion-slide style="background-color: red">
+      <h2>Finish</h2>
+      <p>You can't swipe all day. See more of my app</p>
+      <button ion-button (click)="navigateToMyList()">Show me more!</button>
+    </ion-slide>
+  </ion-slides>
+  <!-- End ionic Slides Component -->
 </ion-content>

@@ -10,11 +10,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PaginaUnoPage } from '../pages/pagina-uno/pagina-uno';
+import { MyListPage } from '../pages/my-list/my-list';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
+    PaginaUnoPage,
+    MyListPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -27,6 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     AboutPage,
+    PaginaUnoPage,
+    MyListPage,
     ContactPage,
     HomePage,
     TabsPage
