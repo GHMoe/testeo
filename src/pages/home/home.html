@@ -1,10 +1,11 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>Welcome Home</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>-->
 
-<!--<ion-content padding>
+<!--Pag orig
+  <ion-content padding>
   <h2>Welcome to Ionic!</h2>
   <p>
     This starter project comes with simple tabs-based layout for apps
@@ -18,11 +19,12 @@
   <button ion-button block (click)="launchPaginaUnoPage()">Página Uno</button>-->
 
   <!-- Start Ionic slides Component -->
-<ion-content>
+<!--<ion-content>
   <ion-slides pager>
     <ion-slide style="background-color: green">
       <h2>Welcome to Hello World!</h2>
       <p>Do some reading here and swipe left</p>
+      <button ion-button block (click)="launchPaginaUnoPage()">Página Uno</button>
     </ion-slide>
     <ion-slide style="background-color: blue">
       <h2>Ionic World</h2>
@@ -34,6 +36,35 @@
       <p>You can't swipe all day. See more of my app</p>
       <button ion-button (click)="navigateToMyList()">Show me more!</button>
     </ion-slide>
-  </ion-slides>
+  </ion-slides>-->
   <!-- End ionic Slides Component -->
+<!--</ion-content>-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Tasks
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="createTask()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor='let task of tasks | async'>
+      <ion-item>
+        <ion-label>{{ task.title }}</ion-label>
+        <ion-checkbox (ionChange)="updateTask( task )" [checked]="task.done"></ion-checkbox>
+      </ion-item>
+       <ion-item-options>
+        <button ion-button color="danger" (click)="removeTask( task )">
+          Delete
+        </button>
+       </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
+

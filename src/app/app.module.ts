@@ -13,6 +13,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PaginaUnoPage } from '../pages/pagina-uno/pagina-uno';
 import { MyListPage } from '../pages/my-list/my-list';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCNg5IeCNl9hY6BmbZfPVGKqq_OjCLBql4",
+  authDomain: "appmoetastic.firebaseapp.com",
+  databaseURL: "https://appmoetastic.firebaseio.com",
+  projectId: "appmoetastic",
+  storageBucket: "appmoetastic.appspot.com",
+  messagingSenderId: "1073951854621",
+  appId: "1:1073951854621:web:f91249a901777ad4"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +39,9 @@ import { MyListPage } from '../pages/my-list/my-list';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig,'appmoetastic'),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
